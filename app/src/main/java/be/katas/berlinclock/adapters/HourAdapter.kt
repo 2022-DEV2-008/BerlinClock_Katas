@@ -9,6 +9,7 @@ import be.katas.berlinclock.Domain.HoursModel
 import be.katas.berlinclock.R
 import be.katas.berlinclock.databinding.BerlinItemLayoutBinding
 import be.katas.berlinclock.utils.DisplayColor
+import be.katas.berlinclock.utils.SPAN_COUNT_HOUR
 
 class HourAdapter :
     RecyclerView.Adapter<HourAdapter.ViewHolder>() {
@@ -27,7 +28,7 @@ class HourAdapter :
         }
     }
 
-    override fun getItemCount() = 8
+    override fun getItemCount() = SPAN_COUNT_HOUR
 
     fun updateList(updatedHourList: HoursModel) {
         hourList = updatedHourList.topColors + updatedHourList.bottomColors

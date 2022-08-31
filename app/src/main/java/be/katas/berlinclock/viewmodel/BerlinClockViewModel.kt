@@ -24,11 +24,13 @@ class BerlinClockViewModel(private val berlinClock: BerlinClockUtils) : ViewMode
     fun getActualBerlinTime() {
         val currentTime: String = SimpleDateFormat(TIME_FORMAT, Locale.getDefault()).format(Date())
         _berlinClockLiveData.value?.displayTime?.postValue(currentTime)
+        updateUI(berlinClock.getBerlinClock(currentTime))
     }
 
     fun updateUI(berlinClockModel: BerlinClockModel) {
        _berlinClockLiveData.value?.topMinuteAdapter?.updateList(berlinClockModel.minutesLights.topColors)
        _berlinClockLiveData.value?.bottomMinuteAdapter?.updateList(berlinClockModel.minutesLights.bottomColors)
        _berlinClockLiveData.value?.hourAdapter?.updateList(berlinClockModel.hoursLights)
+       _berlinClockLiveData.value?.secondColorEnable?.postValue(berlinClockModel.secondsLights)
     }
 }

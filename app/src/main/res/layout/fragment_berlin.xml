@@ -24,7 +24,7 @@
             android:layout_marginTop="@dimen/_32dp"
             android:id="@+id/btnSecond"
             android:background="@drawable/seconds_background"
-            android:enabled="true"/>
+            android:enabled="@{viewModel.berlinClockData.secondColorEnable}"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvHours"

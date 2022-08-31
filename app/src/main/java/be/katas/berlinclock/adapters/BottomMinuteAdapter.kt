@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import be.katas.berlinclock.databinding.BerlinItemLayoutBinding
 import be.katas.berlinclock.utils.DisplayColor
+import be.katas.berlinclock.utils.SPAN_COUNT_BOTTOM_MINUTE
 
 class BottomMinuteAdapter :
     RecyclerView.Adapter<BottomMinuteAdapter.ViewHolder>() {
@@ -21,7 +22,7 @@ class BottomMinuteAdapter :
         holder.bind(bottomMinutesList[position])
     }
 
-    override fun getItemCount() = 4
+    override fun getItemCount() = SPAN_COUNT_BOTTOM_MINUTE
 
     fun updateList(updatedBottomMinuteList: List<DisplayColor>) {
         bottomMinutesList = updatedBottomMinuteList
