@@ -25,6 +25,17 @@ class HourAdapter :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemView.apply {
             holder.bind(hourList[position], context)
+            when (position) {
+                0, 4 -> {
+                    holder.binding.btnItem.background =
+                        ContextCompat.getDrawable(context, R.drawable.left_curve_red_background)
+                }
+
+                3, 7 -> {
+                    holder.binding.btnItem.background =
+                        ContextCompat.getDrawable(context, R.drawable.right_curve_red_background)
+                }
+            }
         }
     }
 

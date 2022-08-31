@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Capfront/AndroidStudioProjects/BerlinClock/app/src/main/res/drawable/left_curve_red_background.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/Capfront/AndroidStudioProjects/BerlinClock/app/src/main/res/drawable/left_curve_yellow_background.xml" value="0.18385416666666668" />
         <entry key="..\:/Users/Capfront/AndroidStudioProjects/BerlinClock/app/src/main/res/drawable/red_background.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/Capfront/AndroidStudioProjects/BerlinClock/app/src/main/res/drawable/right_curve_red_background.xml" value="0.18385416666666668" />
+        <entry key="..\:/Users/Capfront/AndroidStudioProjects/BerlinClock/app/src/main/res/drawable/right_curve_yellow_background.xml" value="0.18385416666666668" />
         <entry key="..\:/Users/Capfront/AndroidStudioProjects/BerlinClock/app/src/main/res/drawable/seconds_background.xml" value="0.18385416666666668" />
         <entry key="..\:/Users/Capfront/AndroidStudioProjects/BerlinClock/app/src/main/res/drawable/yellow_background.xml" value="0.18385416666666668" />
         <entry key="..\:/Users/Capfront/AndroidStudioProjects/BerlinClock/app/src/main/res/layout/activity_berlin.xml" value="0.16770833333333332" />

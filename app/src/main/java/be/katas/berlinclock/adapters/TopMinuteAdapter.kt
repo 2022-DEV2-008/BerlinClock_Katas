@@ -22,11 +22,23 @@ class TopMinuteAdapter :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(topMinutesList[position])
-        when(position) {
-            2,5,8 -> {
-                holder.itemView.apply {
+        holder.itemView.apply {
+            when(position) {
+                0 -> {
+                        holder.binding.btnItem.background =
+                            ContextCompat.getDrawable(context, R.drawable.left_curve_yellow_background)
+                }
+                2,5,8 -> {
                     holder.binding.btnItem.background =
                         ContextCompat.getDrawable(context, R.drawable.red_background)
+                }
+                10 -> {
+                    holder.binding.btnItem.background =
+                        ContextCompat.getDrawable(context, R.drawable.right_curve_yellow_background)
+                }
+                4 -> {
+                    holder.binding.btnItem.background =
+                        ContextCompat.getDrawable(context, R.drawable.yellow_background)
                 }
             }
         }
