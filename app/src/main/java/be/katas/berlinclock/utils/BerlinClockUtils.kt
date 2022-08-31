@@ -57,4 +57,9 @@ class BerlinClockUtils {
 
     private fun getSecondsValue(second: Int): Boolean = second % 2 == 0
 
+    fun getHourAndMinuteToDisplay(time:String): String {
+        val currentTimeSplit = time.split(":")
+        return currentTimeSplit[0]+":"+currentTimeSplit[1]
+    }
+
 }
