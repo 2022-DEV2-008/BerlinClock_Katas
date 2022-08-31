@@ -3,6 +3,7 @@ package be.katas.berlinclock.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import be.katas.berlinclock.Domain.BerlinClockModel
 import be.katas.berlinclock.fragment.BerlinClockViewState
 import be.katas.berlinclock.utils.BerlinClockUtils
 import be.katas.berlinclock.utils.TIME_FORMAT
@@ -17,11 +18,17 @@ class BerlinClockViewModel(private val berlinClock: BerlinClockUtils) : ViewMode
 
     fun init() {
       _berlinClockLiveData.value = BerlinClockViewState()
+        _berlinClockLiveData.value?.berlinClockModel?.value?.let { updateUI(it) }
     }
 
-    fun updateUi() {
+    fun getActualBerlinTime() {
         val currentTime: String = SimpleDateFormat(TIME_FORMAT, Locale.getDefault()).format(Date())
         _berlinClockLiveData.value?.displayTime?.postValue(currentTime)
     }
 
+    fun updateUI(berlinClockModel: BerlinClockModel) {
+       _berlinClockLiveData.value?.topMinuteAdapter?.updateList(berlinClockModel.minutesLights.topColors)
+       _berlinClockLiveData.value?.bottomMinuteAdapter?.updateList(berlinClockModel.minutesLights.bottomColors)
+       _berlinClockLiveData.value?.hourAdapter?.updateList(berlinClockModel.hoursLights)
+    }
 }

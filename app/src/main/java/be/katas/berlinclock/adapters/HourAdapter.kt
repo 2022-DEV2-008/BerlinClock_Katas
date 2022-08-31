@@ -1,17 +1,19 @@
 package be.katas.berlinclock.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import be.katas.berlinclock.Domain.HoursModel
 import be.katas.berlinclock.R
 import be.katas.berlinclock.databinding.BerlinItemLayoutBinding
 import be.katas.berlinclock.utils.DisplayColor
 
-class TopMinuteAdapter :
-    RecyclerView.Adapter<TopMinuteAdapter.ViewHolder>() {
+class HourAdapter :
+    RecyclerView.Adapter<HourAdapter.ViewHolder>() {
 
-    private lateinit var topMinutesList: List<DisplayColor>
+    private lateinit var hourList: List<DisplayColor>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val rootView =
@@ -20,30 +22,24 @@ class TopMinuteAdapter :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(topMinutesList[position])
-        when(position) {
-            2,5,8 -> {
-                holder.itemView.apply {
-                    holder.binding.btnItem.background =
-                        ContextCompat.getDrawable(context, R.drawable.red_background)
-                }
-            }
+        holder.itemView.apply {
+            holder.bind(hourList[position], context)
         }
     }
 
-    override fun getItemCount() = 11
+    override fun getItemCount() = 8
 
-    fun updateList(updatedTopMinuteList: List<DisplayColor>) {
-        topMinutesList = updatedTopMinuteList
+    fun updateList(updatedHourList: HoursModel) {
+        hourList = updatedHourList.topColors + updatedHourList.bottomColors
         notifyDataSetChanged()
     }
 
     inner class ViewHolder(val binding: BerlinItemLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(minute: DisplayColor) {
-            if (minute != DisplayColor.RED)
-                binding.btnItem.isEnabled = minute != DisplayColor.OFF
-            else binding.btnItem.isEnabled = minute == DisplayColor.RED
+        fun bind(minute: DisplayColor, context: Context) {
+            binding.btnItem.background =
+                ContextCompat.getDrawable(context, R.drawable.red_background)
+            binding.btnItem.isEnabled = minute != DisplayColor.OFF
         }
     }
 }
