@@ -8,6 +8,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
+/**
+ * Base class which extends fragment class and perform required databinding posibility so ne need to repeat same thing in each and every fragment
+ */
 abstract class DataBindingBaseFragment<in V : ViewDataBinding> : Fragment() {
 
     companion object {
