@@ -27,3 +27,27 @@ Here are some useful Gradle/adb commands for executing this project:
  * `./gradlew compileApp` - Builds the debug apk.
  * `./gradlew runUnitTests` - Execute unit tests (both unit and integration).
  * `./gradlew connectedAndroidTest` - Execute UI tests.
+
+# Approaches :
+
+- Test Driven Development (TDD)
+
+- UI Tests & Unit Tests
+
+- MVVM architecture
+
+- Dependency Injection
+
+- Data Bindings
+
+# Dependencies used
+ 
+ - Koin
+ 
+ - Navigation Controller
+ 
+ - Google Truth
+
+# Prerequisites
+- Android Studio Arctic Fox | 2020.3.1 Patch 4
+- Gradle 7.0.4
