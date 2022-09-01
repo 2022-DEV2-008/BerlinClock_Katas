@@ -41,6 +41,7 @@ class BerlinClockFragment : DataBindingBaseFragment<FragmentBerlinBinding>() {
         binding.rvTopMinute.adapter = viewModel.berlinClockData.value?.topMinuteAdapter
         binding.rvBottomMinute.adapter = viewModel.berlinClockData.value?.bottomMinuteAdapter
         binding.rvHours.adapter = viewModel.berlinClockData.value?.hourAdapter
+        viewModel.berlinClockData.value?.berlinClockModel?.value?.let { viewModel.updateUI(it) }
     }
 
     /**

@@ -29,7 +29,6 @@ class BerlinClockViewModel(private val berlinClock: BerlinClockUtils) : ViewMode
      */
     fun init() {
       _berlinClockLiveData.value = BerlinClockViewState()
-        _berlinClockLiveData.value?.berlinClockModel?.value?.let { updateUI(it) }
     }
 
     /**
