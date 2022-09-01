@@ -28,7 +28,13 @@ Here are some useful Gradle/adb commands for executing this project:
  * `./gradlew runUnitTests` - Execute unit tests (both unit and integration).
  * `./gradlew connectedAndroidTest` - Execute UI tests.
 
-# Approaches :
+# Running App
+
+- Import Project in android studio
+- Perorm gradle build to install all the dependencies
+- =Run the application in emulator or physical device using Shift+F10
+
+# Approaches Followed :
 
 - Test Driven Development (TDD)
 
